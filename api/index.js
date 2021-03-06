@@ -123,12 +123,13 @@ const SiteData = async  (req, res, options) => {
                                 badRequestResponse(res, {error: API_ERRORS.fileSizeLimit})
 
                             } else {
+                                console.log("FILE_ERROR_X:", 1, err)
                                 //clean up - delete files if uploaded
                                 deleteFiles(req.files)
                                 serverErrorResponse(res, {error: API_ERRORS.fileErrorX}, options.debug)
                             }
 
-                        } else if (err) {
+                        } else if (err) {console.log("FILE_ERROR_X:", 2, err)
                             // An unknown error occurred when uploading.
                             //clean up - delete files if uploaded
                             deleteFiles(req.files)
@@ -164,7 +165,7 @@ const SiteData = async  (req, res, options) => {
                                     error = endpoint.expectedFiles?.max[1] || API_ERRORS.fileMaxTotalLimit
                                     badRequestResponse(res, {error: error})
                                     break
-                                default:
+                                default:console.log("FILE_ERROR_X:", 3, err)
                                     error = API_ERRORS.fileErrorX
                                     serverErrorResponse(res, {error: error}, options.debug)
                             }
@@ -174,7 +175,7 @@ const SiteData = async  (req, res, options) => {
                                 error = endpoint.expectedFiles?.mimes[1] || API_ERRORS.fileInvalidMime
                                 badRequestResponse(res, {error: error})
 
-                            } else {
+                            } else {console.log("FILE_ERROR_X:", 4, err)
                                 // An unknown error occurred when uploading.
                                 //clean up - delete files if uploaded
                                 deleteFiles(req.files)
