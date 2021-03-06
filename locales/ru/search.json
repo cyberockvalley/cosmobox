@@ -1,0 +1,17 @@
+{
+    "filter-search": "\"{{search}}\"",
+    "filter-country-search": "\"{{search}}\" в {{country}}",
+
+    "filter-cat": "{{cat}}",
+    "filter-cat-country": "{{cat}} в {{country}}",
+    "filter-cat-search": "\"{{search}}\", {{cat}}",
+    "filter-cat-country-search":  "\"{{search}}\", {{cat}} в {{country}}",
+
+    
+    "filter-cat-and-subcat": "\"{{subcat}}\" из {{cat}}",
+    "filter-cat-and-subcat-country": "\"{{subcat}}\" из {{cat}} в {{country}}",
+    "filter-cat-and-subcat-search": "\"{{search}}\", \"{{subcat}}\" из {{cat}}",
+    "filter-cat-and-subcat-country-search": "\"{{search}}\", \"{{subcat}}\" из {{cat}} в {{country}}",
+    
+    "filter-country": "Квартиры в {{country}}"
+}

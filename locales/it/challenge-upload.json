@@ -1,0 +1,15 @@
+{
+    "title": "Carica foto",
+    "notes-1": "Per aumentare le possibilità di essere presenti, assicurati che i tuoi invii rispettino le nostre linee guida.",
+    "notes-2": "Rivedremo il tuo contributo. Se viene selezionato, riceverai una notifica via email e i tuoi contenuti saranno presenti nella nostra ricerca.",
+    "publish": "Pubblica",
+    "select": "Sfoglia",
+    "ordragdrop": "o trascina e rilascia",
+    "error-invalid-photo": "Foto non valida. Carica solo immagini supportate.",
+    "supported-images": "Immagini supportate:",
+    "uploaded": "{{count}} di {{total}} caricato",
+    "error-count": {
+        "one": "{{count}} errore",
+        "other": "{{count}} errori"
+    }
+}

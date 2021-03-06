@@ -1,0 +1,60 @@
+{
+    "site-desc": "Buy and sell cheap quality products",
+    "please-wait": "Please wait",
+    "fetching-user-data-message": "Fetching your info. Please wait...",
+    "submit": "Submit",
+    "ok": "Ok",
+    "yes": "Yes",
+    "no": "No",
+    "cancel": "Cancel",
+    "action-ok": "Successful action",
+    "error-try-again": "An error occurred. Please  try again later.",
+    "title-loading": "Loading...",
+    "no-result": "No result found",
+    "num-abbr": "k, m, b, t",
+    "reset-form": "Reset form",
+    "submit-text": "Submit",
+    "require-login-message": "Please sign in to perform this action",
+    "chars-remaining": "{{count}} characters remaining",
+    "FILE_ERROR_UKNOWN": "Could not create your upload",
+    "LIMIT_FILE_SIZE": "Your upload is too large",
+    "LIMIT_UNEXPECTED_FILE": "You have exceeded the maximum files per upload",
+    "LIMIT_EXPECTED_FILE": "You need to upload more files",
+    "INVALID_MIME": "Unsupported file types",
+    "ROUTE_NOT_FOUND": "The server could not understand your request",
+    "AUTH_REQUIRED": "Please sign in to perform this action",
+    "error-enter-message": "Please enter your message",
+    "error-short-message": "Your message is too short",
+    "error-long-message": "Your messsage is too long",
+    "error-long-username": "Your username is too long",
+    "error-username-invalid-chars": "Your username contains invalid characters",
+    "message-to-self": "You can't send a message to yourself",
+    "action-not-allowed": "Action forbidden",
+    "no-product-id": "Please provide the product id",
+    "product-not-found": "Product not found",
+    "no-followed-id": "The account to follow not specified",
+    "invalid-product-id": "Invalid product",
+    "no-to-id": "Message receiver not specified",
+    "receiver-not-found": "Message receiver found",
+    "user-id-empty": "User not specified",
+    "username-already-exist": "Username already exists",
+    "files-too-large": "Files too large",
+    "x-hundred": {
+        "one": "{{count}} hundred",
+        "other": "{{count}} hundred"
+    },
+    "x-thousand": {
+        "one": "{{count}} thousand",
+        "other": "{{count}} thousand"
+    },
+    "x-million": {
+        "one": "{{count}} million",
+        "other": "{{count}} million"
+    },
+    "all-x": "All {{count}}",
+    "close": "Close",
+    "current-booster": {
+        "one": "This listing currently has {{count}} day booster",
+        "other": "This listing currently has {{count}} days booster"
+    }
+}

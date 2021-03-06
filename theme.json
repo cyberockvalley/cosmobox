@@ -1,0 +1,36 @@
+{
+    "fivebazar": {
+        "colors": {
+            "primary": {
+                "900": "#70b93f",
+                "800": "#30790f"
+            },
+            "primary-font": "#fff",
+            "primary-secondary": "#fed136",
+            "primary-btn-font": "#fff",
+            "energy": {
+                "900": "#70b93f"
+            },
+            "header": {
+                "900": "#212529"
+            }
+        }
+    },
+    "cosmobox": {
+        "colors": {
+            "primary": {
+                "900": "#70b93f",
+                "800": "#70b93f"
+            },
+            "primary-font": "#fff",
+            "primary-secondary": "#FFA010",
+            "primary-btn-font": "#fff",
+            "energy": {
+                "900": "#fea136"
+            },
+            "header": {
+                "900": "#70b93f"
+            }
+        }
+    }
+}

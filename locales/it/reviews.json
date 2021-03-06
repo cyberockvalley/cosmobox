@@ -1,0 +1,20 @@
+{
+    "reviews-title": "Recensioni: {{title}}",
+    "product-ratings-count": "Valutazioni dei prodotti ({{count}})",
+    "product-reviews-count": "Product reviews ({{count}})",
+    "ratings-count": {
+        "one": "{{count}} valutazione",
+        "other": "{{count}} valutazioni"
+    },
+    "your-rating": "Il tuo punteggio",
+    "edit-review": "Modifica recensione",
+    "add-review": "Aggiungi recensione",
+    "review-placeholder": "Scrivi la tua recensione ...",
+    "reset-form": "Reimposta recensione",
+    "submit-text": "Valuta ora",
+    "customers-feedback": "Feedback dei clienti",
+    "review-sent": "Valutazione inviata!",
+    "error-no-rating": "Fai clic su una valutazione",
+    "error-invalid-rating": "Fai clic su una valutazione",
+    "error-long-review": "La tua recensione è troppo lunga"
+}

@@ -1,0 +1,20 @@
+{
+    "reviews-title": "Reviews: {{title}}",
+    "product-ratings-count": "Product ratings ({{count}})",
+    "product-reviews-count": "Product reviews ({{count}})",
+    "ratings-count": {
+        "one": "{{count}} rating",
+        "other": "{{count}} ratings"
+    },
+    "your-rating": "Your rating",
+    "edit-review": "Edit review",
+    "add-review": "Add review",
+    "review-placeholder": "Write your review...",
+    "reset-form": "Reset review",
+    "submit-text": "Rate now",
+    "customers-feedback": "Customers feedback",
+    "review-sent": "Rating sent!",
+    "error-no-rating": "Please click a rating",
+    "error-invalid-rating": "Please click a rating",
+    "error-long-review": "Your review is too long"
+}

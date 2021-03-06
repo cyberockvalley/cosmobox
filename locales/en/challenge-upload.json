@@ -1,0 +1,15 @@
+{
+    "title": "Upload photos",
+    "notes-1": "To increase the chance of being featured, please ensure that your submissions meet our guidelines.",
+    "notes-2": "We'll review your submission. If it gets selected, you will receive an email notification and your content will be featured in our search.",
+    "publish": "Publish",
+    "select": "Browse",
+    "ordragdrop": "or drag & drop",
+    "error-invalid-photo": "Invalid photo. Please upload only supported images.",
+    "supported-images": "Supported images:",
+    "uploaded": "{{count}} of {{total}} uploaded",
+    "error-count": {
+        "one": "{{count}} error",
+        "other": "{{count}} errors"
+    }
+}

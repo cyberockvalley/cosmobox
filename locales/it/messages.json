@@ -1,0 +1,8 @@
+{
+    "yesterday": "Ieri",
+    "no-chat-selected-message": "Seleziona una conversazione per iniziare a chattare",
+    "provide-message-versions": "Fornire versioni messaggio",
+    "provide-message-version": "Fornisci la versione del messaggio per {{version}}",
+    "provide-message-version-error": "Fornisci la versione del messaggio per {{version}}",
+    "missing-translations": "Fornisci le traduzioni per il tuo messaggio"
+}

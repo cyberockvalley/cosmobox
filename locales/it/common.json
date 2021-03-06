@@ -1,0 +1,60 @@
+{
+    "site-desc": "Acquista e vendi prodotti di qualità a buon mercato",
+    "please-wait": "Attendere prego",
+    "fetching-user-data-message": "Recupero delle tue informazioni. Attendi ...",
+    "submit": "Invia",
+    "ok": "Ok",
+    "yes": "Sì",
+    "no": "No",
+    "cancel": "Annulla",
+    "action-ok": "Azione riuscita",
+    "error-try-again": "Si è verificato un errore. Riprova più tardi.",
+    "title-loading": "Caricamento in corso ...",
+    "no-result": "Nessun risultato trovato",
+    "num-abbr": "k, m, b, t",
+    "reset-form": "Reimposta modulo",
+    "submit-text": "Invia",
+    "require-login-message": "Accedi per eseguire questa azione",
+    "chars-remaining": "{{count}} caratteri rimanenti",
+    "FILE_ERROR_UKNOWN": "Impossibile creare il tuo caricamento",
+    "LIMIT_FILE_SIZE": "Il tuo caricamento è troppo grande",
+    "LIMIT_UNEXPECTED_FILE": "Hai superato il numero massimo di file per caricamento",
+    "LIMIT_EXPECTED_FILE": "Devi caricare più file",
+    "INVALID_MIME": "Tipi di file non supportati",
+    "ROUTE_NOT_FOUND": "Il server non ha potuto comprendere la tua richiesta",
+    "AUTH_REQUIRED": "Accedi per eseguire questa azione",
+    "error-enter-message": "Inserisci il tuo messaggio",
+    "error-short-message": "Il tuo messaggio è troppo corto",
+    "error-long-message": "Il tuo messaggio è troppo lungo",
+    "error-long-username": "Il tuo nome utente è troppo lungo",
+    "error-username-invalid-chars": "Il tuo nome utente contiene caratteri non validi",
+    "message-to-self": "Non puoi inviare un messaggio a te stesso",
+    "action-not-allowed": "Azione vietata",
+    "no-product-id": "Fornisci l'ID del prodotto",
+    "product-not-found": "Prodotto non trovato",
+    "no-followed-id": "L'account da seguire non è specificato",
+    "invalid-product-id": "Prodotto non valido",
+    "no-to-id": "Destinatario del messaggio non specificato",
+    "receiver-not-found": "Ricevitore del messaggio trovato",
+    "user-id-empty": "Utente non specificato",
+    "username-already-exist": "Nome utente già esistente",
+    "files-too-large": "File troppo grandi",
+    "x-hundred": {
+        "one": "Cento",
+        "other": "{{count}} cento"
+    },
+    "x-thousand": {
+        "one": "Mille",
+        "other": "{{count}} mila"
+    },
+    "x-million": {
+        "one": "{{count}} milione",
+        "other": "{{count}} milioni"
+    },
+    "all-x": "Tutta {{count}}",
+    "close": "Chiudi",
+    "current-booster": {
+        "one": "Questo elenco ha attualmente un booster di {{count}} giorno",
+        "other": "Questo elenco ha attualmente un booster di {{count}} giorni"
+    }
+}

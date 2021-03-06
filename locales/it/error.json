@@ -1,0 +1,12 @@
+{
+    "error_title_400": "400 - Non trovato!",
+    "error_content_400": "La pagina che stai cercando non è stata trovata: (",
+    "error_title_401": "401 - Non autorizzato!",
+    "error_content_401": "Non hai le credenziali per questa pagina",
+    "error_title_403": "403 - Proibito!",
+    "error_content_403": "Non hai l'autorizzazione per questa pagina",
+    "error_title_404": "404 - Non trovato!",
+    "error_content_404": "La pagina che stai cercando non è stata trovata: (",
+    "error_title_500": "500 - Errore interno del server",
+    "error_content_500": "Siamo noi. non tu. Per favore ritorna più tardi."
+}

@@ -1,0 +1,11 @@
+{
+    "url": "https://en5sx4qzia4qq3t.m.pipedream.net",
+    "event_types": [
+        {
+            "name": "PAYMENT.CAPTURE.COMPLETED"
+        },
+        {
+            "name": "PAYMENT.CAPTURE.DENIED"
+        }
+    ]
+}

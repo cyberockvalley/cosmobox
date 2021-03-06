@@ -1,0 +1,16 @@
+[
+    {
+        "op": "replace",
+        "path": "/url",
+        "value": "https://www.yeowza.com/paypal_webhook_url"
+    },
+    {
+        "op": "replace",
+        "path": "/event_types",
+        "value": [
+            {
+                "name": "PAYMENT.SALE.REFUNDED"
+            }
+        ]
+    }
+]

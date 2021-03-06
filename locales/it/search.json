@@ -1,0 +1,17 @@
+{
+    "filter-search": "\"{{search}}\"",
+    "filter-country-search": "\"{{search}}\" nella {{country}}",
+
+    "filter-cat": "{{cat}}",
+    "filter-cat-country": "{{cat}} nella {{country}}",
+    "filter-cat-search": "\"{{search}}\", {{cat}}",
+    "filter-cat-country-search":  "\"{{search}}\", {{cat}} nella {{country}}",
+
+    
+    "filter-cat-and-subcat": "\"{{subcat}}\" di {{cat}}",
+    "filter-cat-and-subcat-country": "\"{{subcat}}\" di {{cat}} nella {{country}}",
+    "filter-cat-and-subcat-search": "\"{{search}}\", \"{{subcat}}\" di {{cat}}",
+    "filter-cat-and-subcat-country-search": "\"{{search}}\", \"{{subcat}}\" di {{cat}} nella {{country}}",
+    
+    "filter-country": "Elenchi in {{country}}"
+}

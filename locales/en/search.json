@@ -1,0 +1,17 @@
+{
+    "filter-search": "\"{{search}}\"",
+    "filter-country-search": "\"{{search}}\" in {{country}}",
+
+    "filter-cat": "{{cat}}",
+    "filter-cat-country": "{{cat}} in {{country}}",
+    "filter-cat-search": "\"{{search}}\", {{cat}}",
+    "filter-cat-country-search":  "\"{{search}}\", {{cat}} in {{country}}",
+
+    
+    "filter-cat-and-subcat": "\"{{subcat}}\" of {{cat}}",
+    "filter-cat-and-subcat-country": "\"{{subcat}}\" of {{cat}} in {{country}}",
+    "filter-cat-and-subcat-search": "\"{{search}}\", \"{{subcat}}\" of {{cat}}",
+    "filter-cat-and-subcat-country-search": "\"{{search}}\", \"{{subcat}}\" of {{cat}} in {{country}}",
+    
+    "filter-country": "Listings in {{country}}"
+}

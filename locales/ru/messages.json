@@ -1,0 +1,8 @@
+{
+    "yesterday": "Вчера",
+    "no-chat-selected-message": "Выберите чат, чтобы начать чат",
+    "provide-message-versions": "Предоставить версии сообщений",
+    "provide-message-version": "Предоставить версию сообщения для {{version}}",
+    "provide-message-version-error": "Укажите версию сообщения для {{version}}",
+    "missing-translations": "Пожалуйста, предоставьте переводы вашего сообщения"
+}

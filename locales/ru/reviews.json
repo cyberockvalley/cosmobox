@@ -1,0 +1,20 @@
+{
+    "reviews-title": "Отзывы: {{title}}",
+    "product-ratings-count": "Оценки продукта ({{count}})",
+    "product-reviews-count": "Отзывы о продукте ({{count}})",
+    "ratings-count": {
+        "one": "{{count}} рейтинг",
+        "other": "{{count}} оценок"
+    },
+    "your-rating": "Ваш рейтинг",
+    "edit-review": "Редактировать отзыв",
+    "add-review": "Добавить отзыв",
+    "review-placeholder": "Напишите свой отзыв ...",
+    "reset-form": "Сбросить обзор",
+    "submit-text": "Оценить сейчас",
+    "customers-feedback": "Отзывы клиентов",
+    "review-sent": "Рейтинг отправлен!",
+    "error-no-rating": "Нажмите на рейтинг",
+    "error-invalid-rating": "Пожалуйста, нажмите на рейтинг",
+    "error-long-review": "Ваш отзыв слишком длинный"
+}
