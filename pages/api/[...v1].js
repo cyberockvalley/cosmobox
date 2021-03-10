@@ -19,6 +19,10 @@ const staticPath = (staticFilePath) => {
     return path.join(getConfig().serverRuntimeConfig.STATIC_PATH, staticFilePath)
 }
 
+const projectRoot = () => {
+    return getConfig().serverRuntimeConfig.PROJECT_ROOT
+}
+
 if(process.env.NODE_ENV === 'production') {
     console.log = () => {}
 }
@@ -61,14 +65,40 @@ export const API_OPTIONS = {
             expectedData: "all",
             expectedHeaders: "all",
             respond: async ({expectedData, expectedHeaders, tables}) => {
+                const fs = require("fs")
+                const path = require("path")
                 const Sequelize = require("sequelize");
                 const { PayPal, Product } = tables
-                var webhookId = process.env.NODE_ENV === "production"? 
+                var isProduction = process.env.NODE_ENV === "production"
+                var webhookId = isProduction? 
                 process.env.PAYPAL_LIVE_WEBHOOK_ID : process.env.PAYPAL_SANDBOX_WEBHOOK_ID
 
-                //console.log("paypal-payment:", "expectedData", expectedData)
-                //console.log("paypal-payment:", "expectedHeaders", expectedHeaders)
-                //console.log("paypal-payment:", "webhookId", webhookId)
+                var logFile = path.join(projectRoot(), `../logs/cosmobox/paypal-payment${isProduction? "" : "-dev"}.txt`)
+
+                console.log("paypal-payment:", "expectedData", expectedData)
+                console.log("paypal-payment:", "expectedHeaders", expectedHeaders)
+                console.log("paypal-payment:", "webhookId", webhookId)
+
+                var today = new Date();
+                var day = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate()
+                var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds()
+
+                console.log("LOG_FILE:", projectRoot(), logFile)
+
+                fs.appendFile(logFile, `
+---------TIME-START: ${day} ${time}\n
+webhookId: ${webhookId}\n
+-----------------------\n
+expectedData: ${JSON.stringify(expectedData)}\n
+-----------------------\n\n
+expectedHeaders: ${JSON.stringify(expectedHeaders)}\n
+-----------------------\n\n
+                `, function(err) {
+                    if(!err) {
+                        console.log(err);
+                    }
+                    console.log("The file was saved!");
+                })
 
                 if(!expectedData || !expectedHeaders) {
                     return Promise.resolve({
@@ -83,15 +113,40 @@ export const API_OPTIONS = {
                 var captureStatus = resource?.status || ""
 
                 if(eventType != "PAYMENT.CAPTURE.COMPLETED" || !resource.final_capture || !captureStatus || captureStatus != "COMPLETED") {
+                    fs.appendFile(logFile, `
+NotCatptured.eventType : ${eventType}\n\
+-----------------------\n\
+NotCatptured.final_capture : ${resource.final_capture}\n\
+-----------------------\n\
+NotCatptured.captureStatus : ${captureStatus}\n\
+-----------------------\n\
+                    `, function(err) {
+                        if(!err) {
+                            console.log(err);
+                        }
+                        console.log("The file was saved!");
+                    })
+
                     return Promise.resolve({
                         data: { status: "ok", message: "not-paid" }
                     })
                 }
+
+                console.log("paypal-payment:", "b4Verify")
                 
                 try {
                     var isValid = await verify(expectedHeaders, expectedData, webhookId, null, true)
                     if(isValid) {
                         console.log("paypal-payment:", "ok")
+                        fs.appendFile(logFile, `
+VERIFICATION_OK\n\n
+                        `, function(err) {
+                            if(!err) {
+                                console.log(err);
+                            }
+                            console.log("The file was saved!");
+                        })
+
                         var captureId = resource?.id || ""
                         var captureAmount = resource?.amount?.value || 0
                         var captureCurrency = resource?.amount?.currency_code || ""
@@ -167,6 +222,14 @@ export const API_OPTIONS = {
 
                     } else {
                         console.log("paypal-payment:", "failed")
+                        fs.appendFile(logFile, `
+VERIFICATION_FAILED\n\n
+                        `, function(err) {
+                            if(!err) {
+                                console.log(err);
+                            }
+                            console.log("The file was saved!");
+                        })
                         return Promise.resolve({
                             status: STATUS_CODES.BAD_REQUEST,
                             data: { status: "failed" }
@@ -175,6 +238,14 @@ export const API_OPTIONS = {
 
                 } catch(error) {
                     console.log("paypal-payment:", "error", error)
+                    fs.appendFile(logFile, `
+VERIFICATION_ERROR: ${error}\n\n
+                        `, function(err) {
+                            if(!err) {
+                                console.log(err);
+                            }
+                            console.log("The file was saved!");
+                    })
                     return Promise.resolve({
                         status: error?.response?.httpStatusCode,
                         data: error?.response

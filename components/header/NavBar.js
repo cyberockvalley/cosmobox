@@ -13,7 +13,7 @@ import getPageLinks from "../../hooks/page-links"
 import { getFullUrl, userLink } from "../../utils/functions"
 import { Text } from "@chakra-ui/react"
 import ImageView from "../../views/ImageView"
-import { THEME } from "../../utils/constants"
+import { NO_PROFILE_PIC, PROFILE_PHOTO_SIZE_SM, THEME } from "../../utils/constants"
 
 const { signInPageLink } = getPageLinks()
 
@@ -110,7 +110,7 @@ export default function NavBar({noSearchBar}) {
       <ul className={`navbar-nav navbar-right ${hideStateLinks? 'd-md-none' : ''}`}>
         <li className="nav-item dropdown">
           <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i className="fa fa-2x fa-user-circle"></i>
+            <ImageView isDefaultHost className="profile-image-round" style={{display: "inline", width: PROFILE_PHOTO_SIZE_SM, height: PROFILE_PHOTO_SIZE_SM, maxWidth: PROFILE_PHOTO_SIZE_SM, maxHeight: PROFILE_PHOTO_SIZE_SM}} width={PROFILE_PHOTO_SIZE_SM} height={PROFILE_PHOTO_SIZE_SM} src={session.user?.image || NO_PROFILE_PIC} />
           </a>
           <div className="dropdown-menu" aria-labelledby="navbarDropdown">
             <Link href={userLink(session.user.username, session.user.id)} className="dropdown-item text-cap">

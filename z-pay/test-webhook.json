@@ -1,5 +1,5 @@
 {
-    "url": "https://en5sx4qzia4qq3t.m.pipedream.net",
+    "url": "https://cosmobox.it/api/v1/json-paypal-payment",
     "event_types": [
         {
             "name": "PAYMENT.CAPTURE.COMPLETED"

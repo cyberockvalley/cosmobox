@@ -3,7 +3,7 @@ const { parse } = require('url');
 const { readFileSync } = require('fs');
 const next = require('next');
 
-const port = 3001;
+const port = 3000;
 const dev = process.env.NODE_ENV !== 'production';
 console.log("NODE_ENV::", dev? "DEV" : "PROD")
 const app = next({ dev });

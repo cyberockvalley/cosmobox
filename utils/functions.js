@@ -77,7 +77,10 @@ export const slugify = (string, lang) => {
       .replace(p, c => b.charAt(a.indexOf(c))) // Replace special characters
       .replace(/&/g, '-and-') // Replace & with 'and'
 
-    slug = removeStopwords(slug, "-")
+    var stopWordsRemoved =  removeStopwords(slug, "-")
+    if(stopWordsRemoved.length > 0) {
+        slug = stopWordsRemoved
+    }
 
     slug = slug
       .replace(/[^\w\-]+/g, '') // Remove all non-word characters
@@ -146,7 +149,7 @@ export const resizeImage = (dimns, maxWidth, maxHeight) => {
     if(!maxWidth || !maxHeight) return dimns
     var r = Math.min(maxWidth / dimns.width, maxHeight / dimns.height);
     //console.log("PROD:3", r, maxWidth / dimns.width, maxHeight / dimns.height)
-    return { width: dimns.width * r, height: dimns.height * r };
+    return { width: Math.round(dimns.width * r), height: dimns.height * r };
 }
 
 export const href = url => {
@@ -271,4 +274,23 @@ export const timeDiff = (bigDate, smallDate, type, negativeValue) => {
 
 export const getCurrentPackageDaysLeft = (boosterExpiry) => {
     return timeDiff(boosterExpiry, new Date(), timeDiffTypes.day, 0)
+}
+
+export const extractHostname = url => {
+    var hostname;
+    //find & remove protocol (http, ftp, etc.) and get hostname
+
+    if (url.indexOf("//") > -1) {
+        hostname = url.split('/')[2];
+    }
+    else {
+        hostname = url.split('/')[0];
+    }
+
+    //find & remove port number
+    hostname = hostname.split(':')[0];
+    //find & remove "?"
+    hostname = hostname.split('?')[0];
+
+    return hostname;
 }

@@ -49,8 +49,8 @@ export default function ProductReviews({reviews, viewer, userReview, product}) {
     const [userReviewState, setUserReviewState] = useState(userReview || {rating: 0, text: ""})
     const [productState, setProductState] = useState(product)
 
-    const [defaultUserReviewText, setDefaultUserReviewText] = useState(userReview.text || "")
-    const [defaultUserRating, setDefaultUserRating] = useState(userReview.rating || 0)
+    const [defaultUserReviewText, setDefaultUserReviewText] = useState(userReview?.text || "")
+    const [defaultUserRating, setDefaultUserRating] = useState(userReview?.rating || 0)
 
     //update reviews
     useEffect(() => {
@@ -65,8 +65,8 @@ export default function ProductReviews({reviews, viewer, userReview, product}) {
     //update user review
     useEffect(() => {
         setUserReviewState(userReview || {rating: 0, text: ""})
-        setDefaultUserReviewText(userReview.text || "")
-        setDefaultUserRating(userReview.rating || 0)
+        setDefaultUserReviewText(userReview?.text || "")
+        setDefaultUserRating(userReview?.rating || 0)
 
     }, [userReview])
     //update product

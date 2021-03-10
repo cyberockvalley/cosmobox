@@ -1,7 +1,18 @@
+import { Box } from "@chakra-ui/react";
 import ImageView from "../ImageView";
 
-export default function Carousel({children, images, className, onDimension, title}){
+export default function Carousel({children, images, className, onDimension, title, maxWidth, maxHeight}){
 
+    const getW = image => {
+        var dimn = onDimension(image, maxWidth, maxHeight)
+        console.log("Get:", "W", dimn)
+        return 400
+    }
+    const getH = image => {
+        var dimn = onDimension(image, maxWidth, maxHeight)
+        return 400
+
+    }
     return (
         <div>
             <div className={`container p-0 m-0 ${className || ''}`}>
@@ -12,7 +23,7 @@ export default function Carousel({children, images, className, onDimension, titl
                                 {
                                     images.map((image, index) => (
                                         <div className="d-flex justify-content-center align-items-center product-carousel" key={index} className={`carousel-item ${index == 0? 'active' : ''}`}> 
-                                            <ImageView isDefaultHost width={400} height={400} className="w-auto h-100" src={image} alt={title || ""} /> 
+                                            <ImageView isDefaultHost width={getW(image)} height={getH(image)} className="w-auto h-100" src={image} alt={title || ""} /> 
                                         </div>
                                     ))
                                 }

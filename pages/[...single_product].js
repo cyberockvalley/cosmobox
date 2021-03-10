@@ -595,11 +595,11 @@ export default function SingleProduct({product, userReview, seller, viewer, rela
                         <div className="col-md-8">
                             <div className="">
                                 <div className="h1">{ product.title }</div>
-                                <div className="d-flex justify-content-between align-items-center">
-                                    <div onMouseEnter={showReviewForm}>
-                                        <div className="d-flex align-items-center">
-                                            <div>
-                                                <StarRatings
+                                <div className="row align-items-center px-1 w-100">
+                                    <Box as="div" onMouseEnter={showReviewForm} className="col-12 col-lg-6">
+                                        <Box as="div" className="d-flex justify-content-start align-items-center">
+                                            <Box as="div">
+                                                <Box as={StarRatings}
                                                     rating={productState.ratingsAvg}
                                                     starRatedColor="#fea136"
                                                     starHoverColor="#fea136"
@@ -608,19 +608,19 @@ export default function SingleProduct({product, userReview, seller, viewer, rela
                                                     numberOfStars={MAX_RATING_STARS}
                                                     name='rating'
                                                 />
-                                            </div>
+                                            </Box>
                                             { }
                                             {
                                                 productState.reviews > 0?
-                                                <Link href={`/reviews/${slug}`}>
+                                                <Box as={Link} href={`/reviews/${slug}`}>
                                                     ({t('reviews-count', {count: productState.reviews})})
-                                                </Link>
+                                                </Box>
                                                 :
-                                                <div>
+                                                <Box as="div">
                                                     ({t('reviews-count', {count: productState.reviews})})
-                                                </div>
+                                                </Box>
                                             }
-                                        </div>
+                                        </Box>
                                         <div onMouseLeave={hideReviewForm} className={`card rounded my-3 p-3 ${reviewFormShown? '' : 'd-none'}`} style={{width: 400, maxWidth: '100%', position: 'absolute', zIndex: 10}} >
                                             <InputBox className="mb-1" error={ratingError? t(ratingError) : ''}>
                                                 <div className="d-flex align-items-center">
@@ -655,15 +655,18 @@ export default function SingleProduct({product, userReview, seller, viewer, rela
                                                 </div>
                                             </form>
                                         </div>
-                                    </div>
+                                    </Box>
                                     {
                                         !RANKS_PERMISSIONS.daily_deals_marking.includes(viewer?.rank)? null :
-                                        <button onClick={toggleDailyDeal} className={`m-1 btn btn-${!isFlash? "outline-" : ""}danger btn-sm text-cap`}>
-                                            <>
-                                                <span>{t(!isFlash? 'make-daily-deal' : 'unmake-daily-deal')} </span>
-                                                <i className="fa fa-bolt"></i>
-                                            </>
-                                        </button>
+                                        <Box onClick={toggleDailyDeal} className={`col-12 col-lg-6`} py="5px"
+                                        display="flex" justifyContent={{base: "flex-start", lg: "flex-end"}}>
+                                            <button className={`btn btn-${!isFlash? "outline-" : ""}danger btn-sm text-cap`}>
+                                                <>
+                                                    <span>{t(!isFlash? 'make-daily-deal' : 'unmake-daily-deal')} </span>
+                                                    <i className="fa fa-bolt"></i>
+                                                </>
+                                            </button>
+                                        </Box>
                                     }
                                 </div>
                             </div>
@@ -672,7 +675,7 @@ export default function SingleProduct({product, userReview, seller, viewer, rela
                     
                     <div className="row mb-3">
                         <div className="col-md-8 mb-3">
-                            <Carousel className="card rounded" title={product.title} images={product.photos.split(DB_PHOTOS_SEPERATOR)} onDimension={imageUrlToDimension}>
+                            <Carousel maxWidth={400} maxHeight={4} className="card rounded" title={product.title} images={product.photos.split(DB_PHOTOS_SEPERATOR)} onDimension={imageUrlToDimension}>
                                 {
                                     soldOut?
                                     <div className="card py-2 px-3 d-flex flex-row align-items-center bg-sad">
@@ -1039,8 +1042,8 @@ export async function getServerSideProps({ params, req, locale, res }) {
                         photos: product.photos,
                         reviewed: product.reviewed,
                         sold_out: product.sold_out,
-                        createdAt: product.createdAt.toString(),
-                        updatedAt: product.updatedAt.toString(),
+                        createdAt: product.createdAt?.toString(),
+                        updatedAt: product.updatedAt?.toString(),
                         saved_by_viewer: saved_by_viewer,
                         saves: saves,
                         views: views,
@@ -1048,7 +1051,7 @@ export async function getServerSideProps({ params, req, locale, res }) {
                         ratingsAvg: ratingsAvg,
                         is_flash: product.is_flash,
                         hasSubCats: cat.no_subcat_placeholder > 0? false : true,
-                        boosterExpiry: product.boosterExpiry.toString() || (new Date()).toString()
+                        boosterExpiry: product.boosterExpiry?.toString() || (new Date()).toString()
                     },
                     seller: {
                         id: seller.id,
@@ -1056,7 +1059,7 @@ export async function getServerSideProps({ params, req, locale, res }) {
                         username: seller.username,
                         image: seller.image,
                         telephone: seller.telephone,
-                        createdAt: seller.createdAt.toString()
+                        createdAt: seller.createdAt?.toString()
                     },
                     userReview: userReview,
                     viewer: viewer,

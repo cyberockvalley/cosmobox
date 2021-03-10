@@ -837,7 +837,7 @@ export default function Sell({isEdit}) {
                                                 return (
                                                     <Radio cursor="pointer"
                                                     colorScheme="green" onChange={handleChange} value={booster}>
-                                                        <Badge cursor="pointer" colorScheme="green" p="1" fontWeight="bold">
+                                                        <Badge cursor="pointer" colorScheme="green" p="1" fontWeight="bold" whiteSpace="pre-wrap">
                                                         {
                                                             index == 0?
                                                             t('package-none')
